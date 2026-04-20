@@ -1,0 +1,10 @@
+gene="ATGTCA"
+absorbance=0.72
+sample_count=8
+print(gene)
+print(absorbance)
+print(sample_count)
+print(type(gene))
+gene_length=1200
+gene_lenth=int(gene_length)
+int()
