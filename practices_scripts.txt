@@ -1,0 +1,18 @@
+#sequence="ATGCCCATTGATT"
+#print(sequence.swapcase())
+#print(sequence.replace("T","U"))
+#print(sequence.count("U"))
+#print(sequence.find("U"))
+#print(" ".join(sequence))
+#for loops
+#genes=["TP53","BCRA1","EGFR"]
+#for i in genes:
+#for i in genes:
+#    print("gene list", i)
+#count=0
+#while count < 5:
+  #  print("cycle",count)
+   # count += 1
+genes=["BCRA1", "TP53", "MYC"]
+long_genes=[gene for gene in genes if len(gene) > 4]
+print(long_genes)
