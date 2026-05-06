@@ -1,0 +1,5 @@
+import numpy as numpy
+import pandas as pd
+data = {"students": ["Rebecca","John","mary"],"score":[85,72,65],"gender":["female", "male","female"]}
+df = pd.DataFrame(data)
+print(df)
