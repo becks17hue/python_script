@@ -1,0 +1,29 @@
+import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+
+# Load data
+protein_data = pd.read_excel(r"C:\Users\Administrator\Desktop\Data_Cortex_Nuclear.xls\Data_Cortex_Nuclear.xls")
+
+# Print first 5 entries 
+print(protein_data.head(5)) 
+
+# Compare two proteins 
+def compare_expression(a, b):                       
+        if a not in protein_data.columns or b not in protein_data.columns: 
+             raise ValueError("One or both proteins not found in the dataset.")
+        subset = protein_data[[a, b]].dropna()
+        diff = subset[a] - subset[b]       
+        print("Average difference:", np.mean(diff)) 
+        return diff 
+
+# Call function 
+diff = compare_expression("DYRK1A_N", "CDK5_N") 
+
+# Bar plot of result 
+plt.figure(figsize=(6, 4))                           
+plt.bar(range(len(diff)), diff)                     
+plt.xlabel("Mouse") 
+plt.ylabel("Difference") 
+plt.title("Expression Difference: DYRK1A vs CDK5") 
+plt.show()
